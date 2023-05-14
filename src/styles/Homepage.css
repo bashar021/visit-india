@@ -1,0 +1,26 @@
+.banner_container {background-color: black;padding: 0px;height: 100%;position: fixed;}
+.banner_container img {filter: blur(0.5px) brightness(0.7);}
+#banner_img_blockquote {border-style: none;padding: 0px;}
+.get_ticket_btn_box {position: absolute;top: 0px;width: 100%;height: 100%;}
+#ticket_btn_cont {height: 100%;width: fit-content;}
+#ticket_btn_cont button {margin-left: 25%;}
+#ticket_btn_cont {margin-top: 15%;}
+#ticket_btn_cont h1 {font-size: 80px;background: linear-gradient(to left, orange, white,white, green );
+    color: transparent;font-weight: bolder;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation:  typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    -webkit-background-clip: text;
+}
+/* The typing effect */
+@keyframes typing {from { width: 0 }to { width: 100% }}
+  /* The typewriter cursor effect */
+@keyframes blink-caret {from, to { border-color: transparent }50% { border-color: orange; }}
+
+.g_y_t_btn{border-style: solid;border-color: white;background-color: transparent;padding: 10px;border-radius:10px;
+    font-weight: 500;font-size: 20px;color: rgb(17, 17, 17);}
+.g_y_t_btn:hover{
+    background-image: linear-gradient(to right , orange,white,green);border-radius: 20px;}

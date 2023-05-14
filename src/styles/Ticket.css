@@ -1,0 +1,8 @@
+.ticket_cont{margin: 0px;padding: 0px;position: fixed; height: 100%; background-size: cover;
+background-image: linear-gradient( rgba(255, 166, 0, 0.333),rgba(255, 255, 255, 0.368),rgba(0, 128, 0, 0.376));
+}
+.download_btn_cont{background-color: rgba(135, 132, 132, 0.196);backdrop-filter: blur(8px);padding-top: 5%;padding-bottom:8%;border-radius: 50px;
+    margin-top: 8%;margin-left: 5%;}
+.download_btn_cont p{margin-bottom: 5%;}
+.qr_code_img_cont{width: 400px;height:400px;margin-left: 5%;font-size: 50px;border-radius: 50px;margin-top: 8%;background-color:  rgba(135, 132, 132, 0.196);backdrop-filter: blur(8px);}
+.qr_code_loding_cont{width: 10rem;height: 10rem;margin-top:25%;}

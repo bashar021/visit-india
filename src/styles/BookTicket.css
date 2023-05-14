@@ -1,0 +1,14 @@
+.ticket_book_cont{padding: 0px;margin: 0px;height: 100vh;position: fixed;background-size: cover;
+    background-image: linear-gradient( rgba(255, 166, 0, 0.333),rgba(255, 255, 255, 0.368),rgba(0, 128, 0, 0.376));}
+.person_list_name{border-style: solid;margin-left: 1%;margin-right: 1%;margin-top: 2%;}
+.person_list_box{margin-top: 4%;font-size: 20px;margin-bottom: 3%;}
+.person_list_box span{padding-left: 2%;padding-right: 2%;border-style: none;border-color: transparent;background-color: rgba(187, 184, 184, 0.561);color: black;border-radius: 10px;}
+#total_price{ color: red;}
+#total_price span{font-size: 20px;}
+.book_cont{background-color: rgba(255, 255, 255, 0.524);backdrop-filter: blur(10px);padding-left: 5%;margin-top: 10%;padding-top: 5%;padding-bottom: 15%;
+    margin-left: 5%;border-radius: 30px;}
+#payment_btn{margin-right: 2%;}
+.book_input{font-size: 18px;background-color: rgba(187, 184, 184, 0.561);border-color: transparent;color: black;}
+#add_person_btn{font-size: 18px;border-radius: 10px;outline: none;margin-left: 5%;background-color: rgba(128, 128, 128, 0.64);border-color: transparent;color: black;font-weight: 300px;}
+.select_place_image_cont{height: 420px;border-radius: 25px;margin-left: 5%;margin-top: 10%;padding: 0px;}
+.select_place_image_cont img{width:100%;height: 420px;object-fit:cover;border-radius: 25px;border-style: none;}
