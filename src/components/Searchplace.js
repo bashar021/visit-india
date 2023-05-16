@@ -28,6 +28,9 @@ import tughlaqabad from '../images/Tughlaqabad-fort.webp'
 
 
 export default function Searchplace(props) {
+    /**
+     * This is a React function that sets and navigates to a new page when a user selects a place.
+     */
     let [show_place_img, set_show_place_img] = useState('')
     let [place_detail, set_place_detail] = useState({})
     const navigate = useNavigate()
@@ -226,6 +229,10 @@ export default function Searchplace(props) {
         }
     ]
     // DISPLAYING THE SEARCH PLACE FROM THE CURRENT PLACESS 
+   /**
+    * The function filters and displays images based on a search value entered by the user.
+    * @param value - The search value entered by the user.
+    */
     function on_search(value) {
         let place_search_value = value.toUpperCase()
         let img_cont = document.querySelectorAll('.place_img_cont')
@@ -239,10 +246,17 @@ export default function Searchplace(props) {
 
     }
     // FUNCTION TO SHOW THE PLACE DETIALS WITH IMAGE 
+   /**
+    * The function shows a hidden element with the ID "place_detail_cont".
+    */
     function show_place_detail() {
         let place_detail_cont = document.getElementById('place_detail_cont')
         place_detail_cont.style.display = 'block'
     }
+
+   /**
+    * The function hides the HTML element with the ID "place_detail_cont".
+    */
     function close_place_detail() {
         let place_detail_cont = document.getElementById('place_detail_cont')
         place_detail_cont.style.display = 'none'
@@ -251,6 +265,11 @@ export default function Searchplace(props) {
     return (
         <>
             <div className='search_place_cont'>
+                                
+               { /* The above code is creating a search bar component in a web page using ReactJS. The search bar has an
+                input field where users can type in their search query. The `onChange` event is used to capture the
+                user's input and pass it to the `on_search` function. The `on_search` function is not shown in the
+                code snippet and is likely defined elsewhere in the codebase. */}
 
                 <div className='container-fluid'>
                     <div className='search_bar_cont mx-auto '>
@@ -261,6 +280,12 @@ export default function Searchplace(props) {
                         </form>
                     </div>
                 </div>
+                                
+                {/* The above code is rendering a list of places with their images, names, and addresses. It is using
+                the `visiting_place_data_arr` array to map through each place and display its information in a `div`
+                element with a class of `places_items_cont`. When a place is clicked, it sets the `show_place_img`
+                state to the clicked place's image, shows the place detail, and sets the `place_detail` state to the
+                clicked place's information. */}
 
                 <div clasName='places_items_cont' >
                     {
@@ -276,12 +301,35 @@ export default function Searchplace(props) {
                     }
                 </div>
                 {/* CONTAINER TO SHOW THE SLECTED PLACE DETAIL  */}
+               {/* The above code is rendering a container that displays the details of a selected
+               place. It contains an image of the place, its name, address, price per person, and a
+               button to continue to the booking page. The details are populated based on the
+               `show_place_img` state variable, which is set when a user clicks on a place image
+               from the list of visiting places. The `redirect_page_onselect` function is called
+               when the user clicks on the "Continue" button, which redirects the user to the
+               booking page and passes the selected place data as a prop. The `close_place_detail */}
                 <div id='place_detail_cont' className='place_detail_cont'>
                     {/* CLOSE BUTTON OF THE PLACE DETAIL CONTAINER  */}
+                  { /* This is a button that is used to close the container that displays the details of
+                   the selected place. It has an `onClick` event listener that calls the
+                   `close_place_detail()` function when clicked. The `type` attribute is set to
+                   "button" to prevent the button from submitting a form. The `id` attribute is set
+                   to "detail_cont_close_btn" for identification purposes, and the `aria-label`
+                   attribute is used to provide an accessible label for screen readers. The `span`
+                   element inside the button displays an "x" symbol, which is used as a visual cue
+                   to indicate that the button is used for closing the container. The `aria-hidden`
+                   attribute is set to "true" to indicate that the "x" symbol should be hidden from
+                    screen readers. */}
                     <button onClick={function () { close_place_detail() }} type="button" id="detail_cont_close_btn" aria-label="Close">
                         <span aria-hidden="true">&times; </span>
                     </button>
 
+                    {/* This is a container that displays the details of the selected place. It contains an image of the
+                    place, its name, address, price per person, and a button to continue to the booking page. The
+                    details are populated based on the `show_place_img` state variable, which is set when a user clicks
+                    on a place image from the list of visiting places. The `redirect_page_onselect` function is called
+                    when the user clicks on the "Continue" button, which redirects the user to the booking page and
+                    passes the selected place data as a prop. */}
 
                     <div id='place_detail_cont_child'>
                         <div>
@@ -290,6 +338,7 @@ export default function Searchplace(props) {
                             }
 
                         </div>
+
                         <div id='place_detail_box'>
                             <p className='h2 text-white'> {show_place_img.name}</p>
                             <p className='h3 text-white mt-1'>{place_detail.address}</p>

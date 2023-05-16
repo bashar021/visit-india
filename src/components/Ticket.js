@@ -5,9 +5,14 @@ import QRCode from 'react-qr-code';
 import { Canvg } from 'canvg';
 import Postdata from '../controlers/post.js'
 export default function Ticket(props) {
+    /* These are three state variables created using the `useState` hook in a React functional
+    component. */
     const [ticket_img_ulr, set_ticket_img_url] = useState('')
     const [qr_img_genrated, set_img_genrated] = useState(false)
     const [download_url, set_download_url] = useState('')
+   /* The `useEffect` hook is used to perform side effects in a functional component. In this case, it
+   is called with an empty dependency array `[]`, which means it will only run once when the
+   component mounts. */
     useEffect(() => {
         
         qrcode_daata_to_database()
@@ -15,7 +20,14 @@ export default function Ticket(props) {
     }, [])
 
 
-    // GENRATING THE DATA OF THE QRCODE 
+   /**
+    * The function generates a ticket by concatenating the name, phone number, and date of each person
+    * in a given data array.
+    * @returns the concatenated string of names, phone numbers, and dates of all the persons in the
+    * `props.persons_data` array. It is also setting the `ticket_img_url` state to the same
+    * concatenated string.
+    */
+   
     const genrate_ticket = function () {
         let names = ''
         let data = props.persons_data
@@ -29,6 +41,10 @@ export default function Ticket(props) {
         set_ticket_img_url(names)
         return names;
     }
+    /**
+     * The function saves QR code data to a database by generating a ticket URL and posting it to a
+     * server.
+     */
     // saving qr code data to the database 
     function qrcode_daata_to_database() {
         
@@ -47,6 +63,10 @@ export default function Ticket(props) {
 
         }
     }
+    /**
+     * The function converts an SVG QR code to a PNG, creates a download URL for it, and saves it for
+     * downloading.
+     */
     // CONVERTING THE SVG QRCODE TO PNG AND MAKING ITS URL AND SAVING IT FOR DWONLOADING 
     function download_qr_code() {
         // let svg = document.getElementById('qrCode')
@@ -66,10 +86,31 @@ export default function Ticket(props) {
     }
     return (
         <>
-            {/* style={{ backgroundImage: `url(${india_flag})` } */}
+        {/* This code is creating a container for the ticket and displaying some information related
+        to the ticket. It includes a heading "Happy Journey", the number of persons for whom the
+        ticket is generated, a button to download the ticket, and a warning message that the
+        ticket is valid only for 24 hours. The `onClick` event of the download button is calling
+        the `download_qr_code()` function, which converts the SVG QR code to a PNG, creates a
+        download URL for it, and saves it for downloading. The `download_url` state variable is
+        used to set the `href` attribute of the download link. It also creates a container for the
+        QR code image. It includes a loading spinner that is displayed while the QR code image is
+        being generated. Once the image is generated, it is displayed using the `QRCode` component
+        from the `react-qr-code` library. The `qr_img_genrated` state variable is used to
+        conditionally render either the loading spinner or the QR code image. The `ticket_img_ulr`
+        state variable is passed as the `value` prop to the `QRCode` component to generate the QR
+        code image. */}
+        
             <div className='container-fluid ticket_cont' >
                 <div className='row'>
                     {/* DOWNLOAD YOUR TICKET BUTTON CONTAINER  */}
+                   {/* This code is creating a container for the download button and displaying some
+                   information related to the ticket. It includes a heading "Happy Journey", the
+                   number of persons for whom the ticket is generated, a button to download the
+                   ticket, and a warning message that the ticket is valid only for 24 hours. The
+                   `onClick` event of the download button is calling the `download_qr_code()`
+                   function, which converts the SVG QR code to a PNG, creates a download URL for it,
+                   and saves it for downloading. The `download_url` state variable is used to set
+                   the `href` attribute of the download link. */}
                     <div className='col-md-5 download_btn_cont text-center'>
                         <p className='h1'>Happy Journey</p>
                         <p className='mt-0 mb-4 h4'><span>{ticket_img_ulr.split(',').length-1 } </span>  person ticket</p>
@@ -77,6 +118,13 @@ export default function Ticket(props) {
                         <p className='text-danger mt-5'>This ticket valid only for 24 hours </p>
                     </div>
                     {/* QR CODE IMAGE CONTAINER */}
+                    {/* This code is creating a container for the QR code image. It also includes a
+                    loading spinner that is displayed while the QR code image is being generated.
+                    Once the image is generated, it is displayed using the `QRCode` component from
+                    the `react-qr-code` library. The `qr_img_genrated` state variable is used to
+                    conditionally render either the loading spinner or the QR code image. The
+                    `ticket_img_ulr` state variable is passed as the `value` prop to the `QRCode`
+                    component to generate the QR code image. */}
                     <div className='col-md-5 text-center qr_code_img_cont ' >
                         {/* LOADDNG SPPINNER WHILE THE QR CODE IMAGE IS TAKING TIME TO GENRATE  */}
                         {/* IF IMAGE IS NOTE GENRATED THEN SHOW THE SPINNER IF GENRATED THEN SHOW THE QR CODE  */}
