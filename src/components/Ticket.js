@@ -51,8 +51,9 @@ export default function Ticket(props) {
         console.log(ticket_img_ulr)
         console.log(ticket_img_ulr)
         let url  = genrate_ticket()
-        if (url !== '') {
-            const data = Postdata("http://localhost/place/qrcode", { url:url})
+        if (url !== '') {  
+            // process.env.REACT_APP_API_URL  base url of the api 
+            const data = Postdata(`${process.env.REACT_APP_API_URL}place/qrcode`, { url:url})
             if (data.success !== false) {
                 console.log('the data has been saved to the server ')
                 set_img_genrated(true)
