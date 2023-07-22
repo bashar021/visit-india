@@ -11,10 +11,11 @@ async function Postdata(url, postdata) {
     let data = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
+        // credentials: 'include',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Access-Control-Allow-Origin':'http://localhost:3000/',
+            'Access-Control-Allow-Origin':`${process.env.REACT_APP_API_URL}`,
             // jwt token is used if we are using a token 
             // jwt:token
         },
@@ -26,8 +27,6 @@ async function Postdata(url, postdata) {
     }else{
         data = {success:false,message:'please try again later'}
     }
-    
-
     return data
 
 }

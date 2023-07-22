@@ -48,17 +48,18 @@ export default function Ticket(props) {
     // saving qr code data to the database 
     function qrcode_daata_to_database() {
         
-        console.log(ticket_img_ulr)
-        console.log(ticket_img_ulr)
+        // console.log(ticket_img_ulr)
+        // console.log(ticket_img_ulr)
         let url  = genrate_ticket()
         if (url !== '') {  
             // process.env.REACT_APP_API_URL  base url of the api 
             const data = Postdata(`${process.env.REACT_APP_API_URL}place/qrcode`, { url:url})
             if (data.success !== false) {
-                console.log('the data has been saved to the server ')
+                // console.log('the data has been saved to the server ')
                 set_img_genrated(true)
             } else {
-                console.log("not saved the data ")
+                alert("please try again")
+                // console.log("not saved the data ")
             }
             set_img_genrated(true)
 

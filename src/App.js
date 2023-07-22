@@ -9,7 +9,6 @@ import Ticket from './components/Ticket.js';
 import Searchplace from './components/Searchplace.js';
 
 function App() {
- 
   /* This code is using React hooks to define two state variables `selected_place_data` and
   `persons_data` using the `useState` hook. The `set_selected_place_data` and `set_persons_data`
   functions are used to update the state variables respectively. The `useEffect` hook is used to
